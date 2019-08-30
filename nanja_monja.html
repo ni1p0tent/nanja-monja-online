@@ -9,7 +9,7 @@
 <body>
     <center>
     <h1>Let's play Nanja-Monja!</h1>
-    <img id="pic" onclick="slideshow()";"pointcount()" src="pics/0.jpg" width="300" height="450">
+    <img id="pic" onclick="slideshow();pointcount()" src="pics/0.jpg" width="300" height="450">
     <h3>現在取得できる得点：<span id="pointOutput">0</span></h3>
            <script>
            var pics_src = new Array("pics/1.png","pics/2.png","pics/3.png","pics/4.png","pics/5.png","pics/6.png","pics/7.png","pics/8.png","pics/9.png","pics/10.png",
@@ -22,7 +22,7 @@
                document.getElementById("pic").src = pics_src[num];
            }
            function pointcount(){
-               document.getElementById("pointOutput").innerHTML += point;
+               document.getElementById("pointOutput").innerHTML = ++point;
            }
            </script>
 
