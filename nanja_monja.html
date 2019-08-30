@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nanja-Monja</title>
+</head>
+<body>
+    <center>
+    <h1>Let's play Nanja-Monja!</h1>
+    <img id="pic" onclick="slideshow()";"pointcount()" src="pics/0.jpg" width="300" height="450">
+    <h3>現在取得できる得点：<span id="pointOutput">0</span></h3>
+           <script>
+           var pics_src = new Array("pics/1.png","pics/2.png","pics/3.png","pics/4.png","pics/5.png","pics/6.png","pics/7.png","pics/8.png","pics/9.png","pics/10.png",
+                                    "pics/11.png","pics/12.png");
+           var num = 0;
+           var point = 0;
+
+           function slideshow(){
+               num = Math.floor( Math.random() * 11 ) + 1;
+               document.getElementById("pic").src = pics_src[num];
+           }
+           function pointcount(){
+               document.getElementById("pointOutput").innerHTML += point;
+           }
+           </script>
+
+           <div id="text-button"><p id="text">リセット</p></div>
+           <script>
+            document.getElementById("text-button").onclick = function() {
+                point = 0;
+            };
+           </script>
+
+       </center>
+</body>
+</html>
