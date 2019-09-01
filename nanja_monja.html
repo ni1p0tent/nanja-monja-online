@@ -14,7 +14,7 @@
 <body>
     <center>
     <h1 class="title">Let's play Nanja-Monja!</h1>
-    <img id="pic" onclick="slideshow();pointcount()" src="pics/0.jpg" width="300" height="450">
+    <img id="pic" onclick="white();slideshowLate();pointcount()" src="pics/0.jpg" width="300" height="450">
     <h3>現在取得できる得点：<span id="pointOutput">0</span></h3>
     <p><input type="button" onclick="location.href='startmenu.html'" value="初めからやり直す"></p>
            <script>
@@ -24,25 +24,79 @@
            var point = 0;
            var counter = 0;
 
+           function white(){
+               document.getElementById("pic").src = "pics/x.jpg";
+           }
            function slideshow(){
                num = Math.floor( Math.random() * 11 ) + 1;
                document.getElementById("pic").src = pics_src[num];
+           }
+           function slideshowLate(){
+               setTimeout('slideshow();', 250);
            }
            function pointcount(){
                counter += counter;
                document.getElementById("pointOutput").innerHTML = ++point;
            }
            </script>
-    <table width="80%">
+    <table id="peopleTable" width="80%">
         <tr>
-            <th></th>
-            <td></td>
+            <th>名前</th><th>点数</th>
         </tr>
         <tr>
-            <th></th>
-            <td></td>
+            <th>にる</th>
+            <td>１</td>
+        </tr>
+        <tr>
+            <th>かん</th>
+            <td>２</td>
+        </tr>
+        <tr>
+            <th>にる</th>
+            <td>１</td>
+        </tr>
+        <tr>
+            <th>にる</th>
+            <td>１</td>
+        </tr>
+        <tr>
+            <th>にる</th>
+            <td>１</td>
         </tr>
     </table>
+  <input type="button" value=" ボタン " onclick="change_table();" />
+    <script>
+<!--
+      // function change_table(){
+      //   // 要素抜き出し
+      //   var o_list_num_elm = form.number.value;
+      //   var o_list_table_elm = document.getElementById("peopleTable");
+      //
+      //   // 表示数取得
+      //   var i_list_num = parseInt(o_list_num_elm.value);
+      //   // tableのtr要素を抜き出し
+      //   var a_tr_items = o_list_table_elm.children[0].children;
+      //
+      //   // 全てのtr要素に対して処理(※見出しの1行分に注意)
+      //   for(i=0; i<a_tr_items.length; i++){
+      //     if(i<(i_list_num+1)){
+      //       a_tr_items[i].style.display = 'table-row';
+      //     } else {
+      //       a_tr_items[i].style.display = 'none';
+      //     }
+      //   }
+      //   return true;
+      // }
+      // 読み込み時にも発火
+      change_table();
+    //-->
+
+    // function change_table(){
+    //     var rowsNumber = peopleTable.rows.length;
+    //     rowsNumber = forms.number.value;
+    //     alert(peopleTable.rows.length);
+    // }
+</script>
 
        </center>
 </body>

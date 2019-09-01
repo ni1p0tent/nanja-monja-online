@@ -15,44 +15,48 @@
     <center>
     <h1 class="title">Let's play Nanja-Monja!</h1>
     <h2>何人で遊ぶ？</h2>
-    <!-- <p>
-        <span id="peoplenumber">2</span>人<br><br>
-        <input type="button" onclick="minus()" value="-">
-        <input type="button" onclick="plus()" value="+">
+    <p>
+        <form action="nanja_monja.html" id="peopleForm" method="get">
+            <select name="number" id="inputNumber">
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        </form>
     </p>
-    <br> -->
+    <br>
 
     <p>
-        <span>名前を入力してね↓</span><br><br>
-        <form action="peopledData.php" method="post">
+        <h2>名前を入力してね↓</h2>
+        <form action="nanja_monja.html" id="nameForm" name="nameForm" method="get">
             <input type="text" name="name" id="inputName">
-            <input type="submit" value="OK">
+            <input type="button" onclick="enter()" value="OK">
         </form>
     </p>
     <script>
+        function enter(){
+            if(document.forms.nameForm.inputName.value == ""){
 
+            }else{
+                target = document.getElementById("output");
+                target.innerText += document.forms.nameForm.inputName.value + "\n";
+
+            }
+            document.nameForm.reset();
+        }
     </script>
     <p>
-        <!-- ここに名前が表示されるようにする -->
-        ・
+        <div id="output"></div>
     </p>
-    <p><input type="button" onclick="gamestart();location.href='nanja_monja.html'" value="ゲームスタート"></p>
-    <script>
-        var people = 2;
-        function minus(){
-            if(people > 2){
-                document.getElementById("peoplenumber").innerHTML = --people;
-            }else{
-                document.getElementById("peoplenumber").innerHTML = 2;
-            }
-        }
-        function plus(){
-            document.getElementById("peoplenumber").innerHTML = ++people;
-        }
-        function gamestart(){
 
-        }
-    </script>
+    <p><input type="button" onclick="location.href='nanja_monja.html'" value="ゲームスタート"></p>
+
     </center>
 </body>
 </html>
